@@ -20,7 +20,7 @@ function App() {
       </button>
       <input type="checkbox"
         onClick={
-          () => setButtonDisabled(!buttonDisabled)
+          (e) => setButtonDisabled(e.target.checked)
         } 
       />
     </div>
