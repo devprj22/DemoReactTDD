@@ -37,14 +37,12 @@ test('clicking of checkbox', () => {
   render(<App />);
 
   const colorButton = screen.getByRole('button', {name : 'Change to blue'});
-
   const checkbox = screen.getByRole('checkbox');
-  fireEvent.click(checkbox);
 
-  expect(colorButton).not.toBeEnabled();
+  fireEvent.click(checkbox);
+  expect(colorButton).toBeDisabled();
 
   // Testing the toggling
   fireEvent.click(checkbox);
   expect(colorButton).toBeEnabled();
-
 });
